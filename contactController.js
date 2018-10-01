@@ -6,9 +6,6 @@ module.exports = {
             isLogin : req.user ? true : false
         });
     },
-    getLogin: function (req, res) {
-        res.render('login');
-    },
     getLogout: function (req, res) {
         req.logout();
         res.redirect('/');
@@ -54,7 +51,7 @@ module.exports = {
           if (result.n === 0) {
             console.log('contact not found');
           }
-          res.redirect('/contacts');
+          res.status(200).send('contact deleted successfully');
         });
     },
     editContact: function (req, res) {
@@ -75,12 +72,12 @@ module.exports = {
             $set: req.body
           }, (err, result) => {
             if (err) {
-              console.log(err, 'Internal MongoDB error');
+              res.send(err, 'Internal MongoDB error');
             }
             if (result.n === 0) {
-              console.log(new Error('contact not found'));
+              res.send('contact not found');
             }
-            console.log('contact updated');
+            res.status(200).send('contact updated');
           });
     }
 }

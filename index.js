@@ -56,7 +56,7 @@ app.get('/auth/outlook',
 
 app.get('/auth/outlook/callback',
     passport.authenticate('windowslive', {
-        failureRedirect: '/login'
+        failureRedirect: '/ '
     }),
     function (req, res) {
         res.redirect('/');
