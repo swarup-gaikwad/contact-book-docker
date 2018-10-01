@@ -2,7 +2,9 @@ const Contact = require('./models/contact');
 
 module.exports = {
     getHome: function (req, res) {
-        res.render('home');
+        res.render('home', {
+            isLogin : req.user ? true : false
+        });
     },
     getLogin: function (req, res) {
         res.render('login');
@@ -21,14 +23,16 @@ module.exports = {
             var hasContacts = contacts.length === 0;
             res.render('showContacts', {
                 contacts: contacts,
-                hasContacts: hasContacts
+                hasContacts: hasContacts,
+                isLogin : req.user ? true : false
             });
         })
     },
     addContact: function (req, res) {
         res.render('addContact', {
             userName: req.user.displayName,
-            userId: req.user.id
+            userId: req.user.id,
+            isLogin : req.user ? true : false
         });
     },
     addContactToDB: function (req, res) {
@@ -59,7 +63,8 @@ module.exports = {
               console.error(error);
             }
             res.render('editContact', {
-                contact: contact
+                contact: contact,
+                isLogin : req.user ? true : false
             });
           });
     },

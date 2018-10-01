@@ -2,6 +2,8 @@
 
 $(document).ready(() => {
   $('.deleteContact').on('click', (event) => {
+      debugger
+      console.log(event.target.dataset.id)
     $.ajax({
       url: '/contact/delete/' + event.target.dataset.id,
       type: 'DELETE'
