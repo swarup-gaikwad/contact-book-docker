@@ -1,20 +1,20 @@
 # Contact Book
 
-This is a sample project user can store his contacts in the mongodb. Technologies used are nodejs, hapi.js, jquery, mongodb, HTML5, Bootstrap4.
+This is a poc project user can authenticate using outlook and stores his contacts in the mongodb. Technologies used are nodejs, express.js, passport.js, jquery, mongodb, HTML5, Bootstrap4.
 
 ## Getting Started
 
-To get you started you can simply clone the `contact-book-hapi-react` repository and install the dependencies:
+To get you started you can simply clone the `SSO-Contact-book` repository and install the dependencies:
 
 ### Prerequisites
 
 You must have Node.js and its package manager (npm) installed.
 
-### Clone `contact-book-hapi-react`
+### Clone `SSO-Contact-book`
 
 ```
-git clone https://github.com/swarup-gaikwad/contact-book-hapi-react.git
-cd contact-book-hapi-react
+git clone https://github.com/swarup-gaikwad/SSO-Contact-book.git
+cd SSO-Contact-book
 ```
 
 ### Install Dependencies
@@ -34,4 +34,4 @@ and then start this server:
 npm start
 ```
 
-Now browse to the app at [`localhost:8080/`].
+Now browse to the app at [`localhost:3000/`].
