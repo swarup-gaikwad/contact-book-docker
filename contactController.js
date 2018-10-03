@@ -79,5 +79,8 @@ module.exports = {
             }
             res.status(200).send('contact updated');
           });
+    },
+    pageNotFound: function (req, res) {
+        res.render('404');
     }
 }

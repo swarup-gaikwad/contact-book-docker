@@ -11,12 +11,13 @@ router.post('/contact/addContact', ensureAuthenticated, contactController.addCon
 router.delete('/contact/delete/:id', ensureAuthenticated, contactController.deleteContact);
 router.get('/contact/edit/:id', ensureAuthenticated, contactController.editContact);
 router.put('/contact/update/:id', ensureAuthenticated, contactController.updateContact);
+router.get('*', contactController.pageNotFound);
 
 function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
     }
-    res.redirect('/')
+    res.redirect('/auth/outlook')
 }
 
 module.exports = router;
