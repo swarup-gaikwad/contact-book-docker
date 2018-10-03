@@ -23,7 +23,7 @@ module.exports = {
                 hasContacts: hasContacts,
                 isLogin : req.user ? true : false
             });
-        })
+        });
     },
     addContact: function (req, res) {
         res.render('addContact', {
@@ -45,42 +45,42 @@ module.exports = {
     deleteContact: function (req, res) {
         Contact.deleteOne({_id: req.params.id
         }, (err, result) => {
-          if (err) {
-            console.log(err.message, 'Internal MongoDB error');
-          }
-          if (result.n === 0) {
-            console.log('contact not found');
-          }
-          res.status(200).send('contact deleted successfully');
+            if (err) {
+                console.log(err.message, 'Internal MongoDB error');
+            }
+            if (result.n === 0) {
+                console.log('contact not found');
+            }
+            res.status(200).send('contact deleted successfully');
         });
     },
     editContact: function (req, res) {
         Contact.findById(req.params.id, (error, contact) => {
             if (error) {
-              console.error(error);
+                console.error(error);
             }
             res.render('editContact', {
                 contact: contact,
                 isLogin : req.user ? true : false
             });
-          });
+        });
     },
     updateContact: function (req, res) {
         Contact.updateOne({
             _id: req.params.id
-          }, {
+        }, {
             $set: req.body
-          }, (err, result) => {
+        }, (err, result) => {
             if (err) {
-              res.send(err, 'Internal MongoDB error');
+                res.send(err, 'Internal MongoDB error');
             }
             if (result.n === 0) {
-              res.send('contact not found');
+                res.send('contact not found');
             }
             res.status(200).send('contact updated');
-          });
+        });
     },
     pageNotFound: function (req, res) {
         res.render('404');
     }
-}
+};

@@ -4,8 +4,12 @@
   "description": "Contact book with outlook authentication",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint *"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "author": "swarup",
   "license": "ISC",
   "dependencies": {
@@ -15,6 +19,7 @@
     "express-session": "^1.15.6",
     "mongoose": "^5.2.18",
     "passport": "^0.4.0",
-    "passport-outlook": "^2.2.0"
+    "passport-outlook": "^2.2.0",
+    "pre-commit": "^1.2.2"
   }
 }

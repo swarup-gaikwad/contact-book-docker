@@ -1,7 +1,7 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 var routes = require('./routes');
-var passport = require('passport');
+var passport = require('passport')
 var OutlookStrategy = require('passport-outlook').Strategy;
 var session = require('express-session');
 var bodyParser = require('body-parser');
@@ -15,7 +15,7 @@ const port = 3000;
 
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-  extended: true
+    extended: true
 }));
 
 passport.serializeUser(function (user, done) {
@@ -69,7 +69,7 @@ app.engine('handlebars', exphbs({
 
 app.set('view engine', 'handlebars');
 
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 app.use('/', routes);
 
