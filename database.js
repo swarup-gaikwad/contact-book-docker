@@ -1,6 +1,6 @@
 var Mongoose = require('mongoose');
 // load database
-Mongoose.connect('mongodb://localhost/contacts-with-auth', {
+Mongoose.connect('mongodb://mongo:27017/contacts-with-auth', {
     useNewUrlParser: true
 });
 var db = Mongoose.connection;
